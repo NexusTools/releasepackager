@@ -1,0 +1,56 @@
+{
+  "name": "@nexustools/releasepackager",
+  "version": "1.0.0-beta.1",
+  "description": "Pure Node.js cross-platform executable and application release packager generating Windows (.zip, .msi), macOS (.dmg with drag-to-Applications .app), and Linux (.deb, .flatpak, .zip) releases with zero external tool dependencies",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "releasepackager": "bin/releasepackager.js",
+    "release-pack": "bin/releasepackager.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "bin",
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test dist/test/release-packager.test.js",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NexusTools/releasepackager.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "beta"
+  },
+  "keywords": [
+    "packager",
+    "release",
+    "executable",
+    "installer",
+    "msi",
+    "dmg",
+    "deb",
+    "flatpak",
+    "zip",
+    "cross-platform",
+    "nexustools"
+  ],
+  "author": "NexusTools",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.3"
+  }
+}
